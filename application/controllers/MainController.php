@@ -9,8 +9,22 @@ class MainController extends Controller
     
     public function indexAction()
     {
-        $result = $this->model->getNews();
-        $this->view->render('Главная страница', ['news' => $result,]);
+        $this->view->render('Главная страница');
+    }
+
+    public function aboutAction()
+    {
+        $this->view->render('Обо мне');
+    }
+
+    public function contactAction()
+    {
+        $this->view->render('Контакты');
+    }
+
+    public function postAction()
+    {
+        $this->view->render('Пост');
     }
 
 }
