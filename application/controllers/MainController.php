@@ -19,6 +19,13 @@ class MainController extends Controller
 
     public function contactAction()
     {
+        if(!empty($_POST)){
+            if(!$this->model->contactValidate($_POST)){
+                $this->view->message('error', $this->model->error);
+            }
+            mail('zizuber@travala10.com', 'Сообщение из блога', $_POST['name'].'|'.$_POST['email'].'|'.$_POST['text']);
+            $this->view->message('Success', 'Сообщение отправлено Администратору!');
+        }
         $this->view->render('Контакты');
     }
 
@@ -27,4 +34,4 @@ class MainController extends Controller
         $this->view->render('Пост');
     }
 
-}
+} 
