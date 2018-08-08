@@ -13,10 +13,10 @@ return
     'guest' =>
     [
         'login',
-        'register'
     ],
     'admin' =>
     [
+        'posts',
         'logout',
         'add',
         'edit',
